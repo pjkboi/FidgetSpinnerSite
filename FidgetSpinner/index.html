@@ -1,0 +1,77 @@
+<html>
+
+	<head>	
+		
+	<script src="validation.js"></script>	
+	<script type="text/javascript" src="javascript/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="javascript/jQueryRotate.js"></script>			
+
+	</head>
+<style>
+
+	body{
+	text-align:center;
+	float-left:auto;
+	float-right: auto;
+	}
+
+</style>
+
+<img src="img1.png" id="img1">
+	
+		<script type ="text/javascript">
+		
+		
+			var rotation = function (){
+			   $("#img1").rotate({
+			      angle:0, 
+			      animateTo:360, 
+			      callback: rotation,
+			      easing: function (x,t,b,c,d){  
+			          return c*(t/d)+b;
+			      }
+			   });
+			}
+			rotation();
+	
+		</script>
+	<body>
+		
+		<form  action="backEnd.php" method="post" onsubmit = "return validateForm()">
+			<p id="error"></p>
+			<h2>WORLD FIDGET SPINNER OVER 9000!!!!</h2>
+			<p>Fidget spinner are the best item in the world!! get one for your kids! Wife! hushand! or for YOU!</p>
+			<h4>Price: $10/per fidget</h4>
+			<h3>NAME</h3>
+			<input type ="text" placeholder = "Name" id = "txtName" name = "name"/><br>
+			<h3>ADDRESS</h3>
+			<input type ="text" placeholder ="Address" id= "txtAddress" name = "address"/><br>
+			<h3>CITY</h3>
+			<input type ="text" placeholder ="City" id="txtCity" name = "city"/></br>
+			<h3>PROVINCE</h3>
+			<select  name = "province" value ="Province"  id="txtProv" >
+				<option value = "Ontario">Ontario</option>
+				<option value = "Alberta">Alberta</option>
+				<option value = "Manitoba">Manitoba</option>
+				<option value = "British Columbia">British Columbia</option>
+				
+			</select>
+			</br>
+			<h3>PostalCode</h3>
+			<input type ="text" value ="Postal Code" id="txtPostCode" name = "postalCode"/></br>
+			<h3>WORLD FIDGIT SPINNER</h3>
+			<p>(Please enter the amount you would like to order)</p>
+			<input type ="text" placeholder = "Quan" id="txtQuan" name = "quantity"/></br>
+			
+				<input type ="submit" value ="button"/>
+			
+				
+		</form>
+
+			
+		</div>
+	</body>
+	
+		
+	
+</html>
